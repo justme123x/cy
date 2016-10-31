@@ -7,4 +7,9 @@ class IndexController
 	{
 		dump([]);
 	}
+
+	public function News()
+	{
+		dump($_SERVER);
+	}
 }
