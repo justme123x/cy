@@ -59,11 +59,13 @@ class cy
 	 */
 	private static function startApp()
 	{
-		dump('request参数:' . var_dump(static::$request));
+		//拼写命名空间
 		$class = '\App\\' . static::$request['REQUEST_NAMESPACE'] . '\Controllers\\' . static::$request['REQUEST_CONTROLLER'] . 'Controller';
+		//方法名
 		$action = static::$request['REQUEST_ACTION'];
-		static::$app = new $class();
-		static::$app->request = (object)static::$request;
+		//实例化控制器 并传递本次路由请求参数
+		static::$app = new $class(static::$request['REQUEST_PARAMS']);
+		//调用方法
 		static::$app->$action();
 		return;
 	}

@@ -1,7 +1,9 @@
 <?php
 namespace App\Home\Controllers;
 
-class IndexController
+use App\CyController;
+
+class IndexController extends CyController
 {
 	public function Index()
 	{
@@ -10,6 +12,6 @@ class IndexController
 
 	public function News()
 	{
-		dump($_SERVER);
+		dump($this->params('name'));
 	}
 }

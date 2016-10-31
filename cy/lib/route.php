@@ -21,11 +21,9 @@ class route
 	 */
 	public static function getRoute()
 	{
-		dump($_REQUEST);
 		static::$route = config::loadConfig('route');
 		static::$uri = isset($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '#') : '/';
 		static::$uri = str_replace('#', '', static::$uri);
-		dump('本次uri:' . static::$uri);
 		if (isset(static::$route[static::$uri])) {
 			return static::initRoute(static::$uri);
 		} else {
@@ -33,7 +31,6 @@ class route
 				if ($route == '/') continue;
 				$requestRoute = $route . '\\' . static::$endFix;
 				$regStr = '#^' . $requestRoute . '#i';
-				dump('匹配uri正则:' . $regStr);
 				if ($result = preg_match($regStr, static::$uri)) {
 					return static::initRoute($route);
 				}
@@ -50,14 +47,25 @@ class route
 	private static function initRoute($routeKey)
 	{
 		$route = explode('@', static::$route[$routeKey]['route']);
-		$pattern = '#^/[\d\w]+-|\\' . static::$endFix . '$#i';
-		$uriParamsStr = preg_replace($pattern, '', static::$uri);
 		return [
 			'REQUEST_NAMESPACE' => ucfirst(static::$route[$routeKey]['nameSpace']),
 			'REQUEST_INIT' => static::$route[$routeKey]['initRequest'],
 			'REQUEST_CONTROLLER' => ucfirst($route[0]),
 			'REQUEST_ACTION' => ucfirst($route[1]),
-			'REQUEST_PARAMS' => explode('-', $uriParamsStr),
+			'REQUEST_PARAMS' => static::initParams($routeKey),
 		];
+	}
+
+	/**
+	 * 整理路由里面的参数
+	 * a-b-c.html?name=root
+	 * @param $routeKey
+	 * @return array
+	 */
+	private static function initParams($routeKey)
+	{
+		$pattern = '#^/[\d\w]+-|\\' . static::$endFix . '.*#i';
+		$uriParamsStr = preg_replace($pattern, '', static::$uri);
+		return explode('-', $uriParamsStr);
 	}
 }
