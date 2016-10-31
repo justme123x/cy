@@ -7,11 +7,11 @@ class IndexController extends CyController
 {
 	public function Index()
 	{
-		dump([]);
+		echo 'hell world';
 	}
 
 	public function News()
 	{
-		dump($this->params('name'));
+		echo 'hell world';
 	}
 }

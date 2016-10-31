@@ -5,7 +5,6 @@ class initRequest
 {
 	public static function guest()
 	{
-		dump('init request success');
 		return true;
 	}
 
