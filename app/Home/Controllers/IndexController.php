@@ -10,6 +10,9 @@ class IndexController extends \Cy\CyController
 
 	public function News()
 	{
-		echo 'hell world';
+		dump(\Cy\CyDB::getDb());
+		dump(\Cy\CyDB::getDb());
+		dump(\Cy\CyDB::getDb());
+		dump(\Cy\CyDB::getDb());
 	}
 }

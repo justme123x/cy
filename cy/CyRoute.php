@@ -21,7 +21,7 @@ class CyRoute
 	 */
 	public static function getRoute()
 	{
-		static::$route = \Cy\CyConfig::loadConfig('route');
+		static::$route = \Cy\CyConfig::loadConfig('Route');
 		static::$uri = isset($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '#') : '/';
 		static::$uri = str_replace('#', '', static::$uri);
 		if (isset(static::$route[static::$uri])) {

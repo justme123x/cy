@@ -11,10 +11,6 @@ class CyPHP
 	{
 		//初始化框架
 		static::init();
-		$dsn = 'mysql:dbname=frame;host=127.0.0.1';
-		$user = 'root';
-		$password = '123456';
-		\Cy\CyDB::getDb($dsn, $user, $password);
 	}
 
 	/**

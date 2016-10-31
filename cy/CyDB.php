@@ -10,15 +10,16 @@ class CyDB
 
 	public static function getDb()
 	{
-		$dsn = '';
-		$username = '';
-		$passwd = '';
-		$options = [];
 		if (static::$pdo instanceof \PDO) return static::$pdo;
 
 		try {
-			$pdo = new \PDO($dsn, $username, $passwd, $options);
-		} catch (\Exception $e) {
+			return $pdo = new \PDO(
+				\Cy\CyConfig::getConfig('DataBase', 'DSN'),
+				\Cy\CyConfig::getConfig('DataBase', 'USER'),
+				\Cy\CyConfig::getConfig('DataBase', 'PASSWD'),
+				\Cy\CyConfig::getConfig('DataBase', 'OPTIONS')
+			);
+		} catch (\PDOException $e) {
 			echo '数据库连接失败：' . $e->getMessage();
 		}
 	}
