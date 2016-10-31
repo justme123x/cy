@@ -1,0 +1,15 @@
+{
+  "name": "CY PHP",
+  "type": "Framework",
+  "require": {
+    "php": ">=5.4.0",
+    "symfony/var-dumper": "*",
+    "noahbuscher/macaw": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cy\\": "cy/",
+      "App\\": "app/"
+    }
+  }
+}
