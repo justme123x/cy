@@ -2,7 +2,7 @@
 namespace Cy;
 
 
-class cy
+class CyPHP
 {
 	private static $request = []; //本次请求参数集合
 	private static $app = null; //本次请求app 对象
@@ -11,6 +11,10 @@ class cy
 	{
 		//初始化框架
 		static::init();
+		$dsn = 'mysql:dbname=frame;host=127.0.0.1';
+		$user = 'root';
+		$password = '123456';
+		\Cy\lib\db::getDb($dsn, $user, $password);
 	}
 
 	/**

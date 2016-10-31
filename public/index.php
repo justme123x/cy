@@ -16,4 +16,4 @@ define('PUBLIC_PATH', ROOT_PATH . 'public' . DIRECTORY_SEPARATOR);
 define('APP_PATH', ROOT_PATH . 'app' . DIRECTORY_SEPARATOR);
 define('CONFIG_PATH', ROOT_PATH . 'config' . DIRECTORY_SEPARATOR);
 require __DIR__ . '/../vendor/autoload.php';
-\Cy\cy::run();
+\Cy\CyPHP::run();

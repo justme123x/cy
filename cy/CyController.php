@@ -1,5 +1,7 @@
 <?php
-namespace App;
+
+namespace Cy;
+
 class CyController
 {
 	private $_params = [];

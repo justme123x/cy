@@ -1,9 +1,7 @@
 <?php
 namespace App\Home\Controllers;
 
-use App\CyController;
-
-class IndexController extends CyController
+class IndexController extends \Cy\CyController
 {
 	public function Index()
 	{
