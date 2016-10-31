@@ -1,7 +1,7 @@
 <?php
 /**
  * 路由配置
- * 路由后缀网址 请cy/lib/route.php 配置
+ * 路由后缀网址 请cy/lib/Route.php 配置
  */
 return [
 

@@ -1,6 +1,6 @@
 <?php
-namespace Cy\lib;
-class db
+namespace Cy;
+class CyDB
 {
 	private static $pdo;
 
@@ -8,8 +8,12 @@ class db
 
 	private function __clone() { }
 
-	public static function getDb($dsn, $username, $passwd, $options = [])
+	public static function getDb()
 	{
+		$dsn = '';
+		$username = '';
+		$passwd = '';
+		$options = [];
 		if (static::$pdo instanceof \PDO) return static::$pdo;
 
 		try {
@@ -18,7 +22,6 @@ class db
 			echo '数据库连接失败：' . $e->getMessage();
 		}
 	}
-
 
 
 }

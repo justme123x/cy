@@ -1,8 +1,8 @@
 <?php
-namespace Cy\lib;
+namespace Cy;
 
 
-class route
+class CyRoute
 {
 	private static $route = [];
 	private static $uri = '/';
@@ -21,7 +21,7 @@ class route
 	 */
 	public static function getRoute()
 	{
-		static::$route = config::loadConfig('route');
+		static::$route = \Cy\CyConfig::loadConfig('route');
 		static::$uri = isset($_SERVER['REQUEST_URI']) ? trim($_SERVER['REQUEST_URI'], '#') : '/';
 		static::$uri = str_replace('#', '', static::$uri);
 		if (isset(static::$route[static::$uri])) {
@@ -41,7 +41,7 @@ class route
 
 	/**
 	 * 为框架初始化命名空间、初始化方法、控制器、方法、参数
-	 * @param $routeKey /config/route.php 定义的 路由key
+	 * @param $routeKey /config/Route.php 定义的 路由key
 	 * @return array
 	 */
 	private static function initRoute($routeKey)

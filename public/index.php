@@ -10,7 +10,7 @@
  * 8、返回结果
  */
 
-define('DEBUG', 0); //调试模式
+define('DEBUG', 1); //调试模式
 define('ROOT_PATH', realpath(__DIR__ . '/../') . DIRECTORY_SEPARATOR);
 define('PUBLIC_PATH', ROOT_PATH . 'public' . DIRECTORY_SEPARATOR);
 define('APP_PATH', ROOT_PATH . 'app' . DIRECTORY_SEPARATOR);

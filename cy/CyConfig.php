@@ -1,7 +1,7 @@
 <?php
-namespace Cy\lib;
+namespace Cy;
 
-class config
+class CyConfig
 {
 	private static $config = []; //配置数组
 

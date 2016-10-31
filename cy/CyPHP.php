@@ -14,7 +14,7 @@ class CyPHP
 		$dsn = 'mysql:dbname=frame;host=127.0.0.1';
 		$user = 'root';
 		$password = '123456';
-		\Cy\lib\db::getDb($dsn, $user, $password);
+		\Cy\CyDB::getDb($dsn, $user, $password);
 	}
 
 	/**
@@ -23,7 +23,7 @@ class CyPHP
 	private static function init()
 	{
 		static::initErrors();
-		static::$request = \Cy\lib\route::init();
+		static::$request = \Cy\CyRoute::init();
 		static::initRequest();
 		static::startApp();
 		return;
