@@ -4,39 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f8a10bf519cd7906bfb9e77131802c7a",
-    "content-hash": "e89348b975edaa87900ae6776947398f",
+    "hash": "93ce083e6f4b95314b08cbbee50b25a3",
+    "content-hash": "47a966da14ead0e54c4c0263d8bd0859",
     "packages": [
-        {
-            "name": "noahbuscher/macaw",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/noahbuscher/Macaw.git",
-                "reference": "a4d5e3e1871143416f95d7ced189545fb5147148"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/noahbuscher/Macaw/a4d5e3e1871143416f95d7ced189545fb5147148.zip",
-                "reference": "a4d5e3e1871143416f95d7ced189545fb5147148",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NoahBuscher\\Macaw\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Simple PHP router class.",
-            "time": "2016-10-13 22:34:57"
-        },
         {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.2.0",
@@ -163,9 +133,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "noahbuscher/macaw": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

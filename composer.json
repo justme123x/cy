@@ -3,8 +3,7 @@
   "type": "Framework",
   "require": {
     "php": ">=5.4.0",
-    "symfony/var-dumper": "*",
-    "noahbuscher/macaw": "dev-master"
+    "symfony/var-dumper": "*"
   },
   "autoload": {
     "psr-4": {
